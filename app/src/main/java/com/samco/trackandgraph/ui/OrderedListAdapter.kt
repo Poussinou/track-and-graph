@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 abstract class OrderedListAdapter<T, G : RecyclerView.ViewHolder>(
     diffCallback: DiffUtil.ItemCallback<T>
-) : ListAdapter<T, G>(diffCallback) {
+) : FadeInListAdapter<T, G>(diffCallback) {
 
     private var list: MutableList<T> = mutableListOf()
 

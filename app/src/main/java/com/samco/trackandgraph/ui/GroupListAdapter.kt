@@ -11,6 +11,7 @@ class GroupListAdapter(private val clickListener: GroupClickListener)
     : OrderedListAdapter<GroupItem, GroupViewHolder>(GroupItemDiffCallback()) {
     override fun onBindViewHolder(holder: GroupViewHolder, position: Int) {
         holder.bind(getItem(position), clickListener)
+        super.onBindViewHolder(holder, position)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GroupViewHolder {

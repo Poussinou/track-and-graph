@@ -24,6 +24,7 @@ class GraphStatAdapter(private val clickListener: GraphStatClickListener, applic
 
     override fun onBindViewHolder(holder: GraphStatViewHolder, position: Int) {
         holder.bind(getItem(position), clickListener, dataSource)
+        super.onBindViewHolder(holder, position)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GraphStatViewHolder {

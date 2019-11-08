@@ -10,62 +10,68 @@
                 type="com.samco.trackandgraph.database.DataPoint" />
     </data>
 
-    <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/list_item_data_point_height"
-            android:layout_marginBottom="5dp"
-            app:cardCornerRadius="@dimen/card_corner_radius"
-            >
-        <androidx.constraintlayout.widget.ConstraintLayout
-                android:orientation="vertical"
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_data_point_height"
+        >
+        <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardBackgroundColor="@color/ap_white"
                 >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
 
-            <TextView
-                    android:id="@+id/timestampText"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:text="@{dataPoint.getDisplayTimestamp()}"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    tools:text="01/02/19  08:16"
-                />
-            <TextView
-                    android:id="@+id/valueText"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:paddingStart="15dp"
-                    android:paddingEnd="15dp"
-                    android:textSize="16sp"
-                    android:singleLine="true"
-                    android:gravity="center"
-                    android:text="@{dataPoint.getDisplayValue()}"
-                    app:layout_constraintLeft_toRightOf="@id/timestampText"
-                    app:layout_constraintRight_toLeftOf="@id/editButton"
-                    tools:text="Some value that goes on for a really long time"
-                />
-            <ImageButton
-                    android:id="@+id/deleteButton"
-                    android:layout_width="@dimen/list_item_data_point_height"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:src="@drawable/delete_icon"
-                    android:tint="@color/secondaryDarkColor"
-                    app:layout_constraintRight_toRightOf="parent"
+                <TextView
+                        android:id="@+id/timestampText"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:text="@{dataPoint.getDisplayTimestamp()}"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        tools:text="01/02/19  08:16"
                     />
-            <ImageButton
-                    android:id="@+id/editButton"
-                    android:layout_width="@dimen/list_item_data_point_height"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:src="@drawable/edit_icon"
-                    android:tint="@color/primaryDarkColor"
-                    app:layout_constraintRight_toLeftOf="@id/deleteButton"/>
+                <TextView
+                        android:id="@+id/valueText"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:textSize="16sp"
+                        android:singleLine="true"
+                        android:gravity="center"
+                        android:text="@{dataPoint.getDisplayValue()}"
+                        app:layout_constraintLeft_toRightOf="@id/timestampText"
+                        app:layout_constraintRight_toLeftOf="@id/editButton"
+                        tools:text="Some value that goes on for a really long time"
+                    />
+                <ImageButton
+                        android:id="@+id/deleteButton"
+                        android:layout_width="@dimen/list_item_data_point_height"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:src="@drawable/delete_icon"
+                        android:tint="@color/secondaryDarkColor"
+                        app:layout_constraintRight_toRightOf="parent"
+                        />
+                <ImageButton
+                        android:id="@+id/editButton"
+                        android:layout_width="@dimen/list_item_data_point_height"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:src="@drawable/edit_icon"
+                        android:tint="@color/primaryDarkColor"
+                        app:layout_constraintRight_toLeftOf="@id/deleteButton"/>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
 </layout>

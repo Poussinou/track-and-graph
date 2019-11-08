@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.samco.trackandgraph.R
 import com.samco.trackandgraph.database.DisplayFeature
@@ -22,6 +21,7 @@ class FeatureAdapter(private val clickListener: FeatureClickListener)
     }
 
     override fun onBindViewHolder(holder: FeatureViewHolder, position: Int) {
+        super.onBindViewHolder(holder, position)
         holder.bind(getItem(position), clickListener)
     }
 }
